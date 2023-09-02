@@ -12,7 +12,7 @@ interface ICharacter {
   name:string;
   level:number;
   introduce:(say:string)=>void;
-  levelUp:(level:number)=>void;
+  levelUp:()=>void;
 }
 
 interface ISpellCaster {
