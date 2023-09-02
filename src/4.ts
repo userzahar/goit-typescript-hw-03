@@ -12,7 +12,7 @@ class Key {
 class Person {
     constructor(private key:Key){
     }
-    public getKey(){
+    public getKey():Key{
         return this.key
     }
 }
@@ -22,12 +22,12 @@ abstract class House {
     private tenants:Person[];
     constructor(public key:Key){}
 
-    comeIn(person:Person){
-        if(!this.door){
-            throw new Error('Door isn`t open');
+    comeIn(person:Person):void{
+        if(this.door){
+            this.tenants.push(person)
         }
-        this.tenants.push(person)
     }
+    
     public abstract openDoor(key:Key):void;
 }
 
